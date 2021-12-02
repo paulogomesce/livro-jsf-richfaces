@@ -2,3 +2,4 @@
 RemoteSystemsTempFiles/*
 /.metadata/
 /cap01/.classpath
+.settings/*
