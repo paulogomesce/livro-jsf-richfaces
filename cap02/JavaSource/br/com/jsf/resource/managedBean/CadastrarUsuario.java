@@ -8,12 +8,12 @@ import javax.annotation.PreDestroy;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionListener;
+import javax.faces.event.ActionEvent;
 
 import br.com.jsf.presentation.to.Usuario;
 
-@ManagedBean(name = "cadastrarUsuario")
 @SessionScoped
+@ManagedBean
 public class CadastrarUsuario implements Serializable{
 	
 	private static final long serialVersionUID = 1L;	
@@ -25,7 +25,7 @@ public class CadastrarUsuario implements Serializable{
 	public String endereco;	
 	private Usuario usuario;
 	
-	public void cadastrarUsuario(ActionListener event) {
+	public void cadastrarUsuario(ActionEvent event) {
 		this.usuario = new Usuario();
 		usuario.setNome(this.nome);
 		usuario.setEmail(this.email);

@@ -7,14 +7,13 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 	<h:head>
-		<title><h:outputText value="Cadastro de Usuário" /></title>
+		<title><h:outputText value="Resultado" /></title>
 		
 		<h:outputStylesheet library="css" name="estilo.css" />
 		<h:outputScript library="js" name="controles.js" target="head"/>
 		
 	</h:head> 
-	<h:body>
-	
+	<h:body>	
 	
 		<h:form id="form">
 
@@ -29,42 +28,31 @@
 			</p>
 
 			<h1>
-				<h:outputFormat value="#{msgs.tituloTelaCadastroUsuario}">
-					<f:param value="um(01)" />
-					<f:param value="Dois(02)" />
-				</h:outputFormat>
+				Resultado
 			</h1>
 		
 			<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgForm">
 			
 					<h:outputLabel value="#{msgs.nome}"/>
-					<h:inputText value="#{cadastrarUsuario.nome}" id="nome" size="50" maxlength="100"/>
+					<h:outputText value="#{cadastrarUsuario.nome}" id="nome" size="50" maxlength="100"/>
 												
 					<h:outputLabel value="#{msgs.email}"/>
-					<h:inputText value="#{cadastrarUsuario.email}" id="email" size="50" maxlength="100"/>
+					<h:outputText value="#{cadastrarUsuario.email}" id="email" size="50" maxlength="100"/>
 												
 					<h:outputLabel value="#{msgs.senha}"/>
-					<h:inputSecret value="#{cadastrarUsuario.senha}" id="senha" size="10" maxlength="8"/>
+					<h:outputText value="#{cadastrarUsuario.senha}" id="senha" size="10" maxlength="8"/>
 												
 					<h:outputLabel value="#{msgs.confirmar}"/>
-					<h:inputSecret value="#{cadastrarUsuario.confirmar}" id="confirmacao" size="10" maxlength="8"/>
+					<h:outputText value="#{cadastrarUsuario.confirmar}" id="confirmacao" size="10" maxlength="8"/>
 					
 					<h:outputLabel value="#{msgs.endereco}"/>
-					<h:inputTextarea value="#{cadastrarUsuario.endereco}" id="endereco" cols="45" rows="5" />						
+					<h:outputText value="#{cadastrarUsuario.endereco}" id="endereco" cols="45" rows="5" />						
 						
 			</h:panelGrid>
 			
-			<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
-				<h:commandButton actionListener="#{cadastrarUsuario.cadastrarUsuario}"
-					action="resultado"
-					onclick="if(!validaCampos()) return false;"
-					value="Cadastrar"
-					style="width: 100px;" />
-				
-				<h:commandButton type="reset"
-					value="Limpar"
-					style="width: 100px;"/>
-			</h:panelGrid>
+			<h:outputFormat value="#{msgs.msg_sucesso}">
+				<f:param value="#{cadastrarUsuario.nome}" />			
+			</h:outputFormat>
 			
 		</h:form>
 	
