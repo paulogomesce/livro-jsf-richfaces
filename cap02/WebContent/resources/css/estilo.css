@@ -16,3 +16,20 @@ input, textarea{
 .linhaTabela{
 	vertical-align: top;
 }
+
+.tabelaHeader{
+	background-color: blue;
+	color: #FFFFFF;
+	height: 12px;
+	font-weight: bold;
+}
+
+.tabelaLinhaPar{
+	background-color: #333333;
+	height: 12px;
+}
+
+.tabelaLinhaImpar{
+	background-color: #B6B6B6;
+	height: 12px;
+}
