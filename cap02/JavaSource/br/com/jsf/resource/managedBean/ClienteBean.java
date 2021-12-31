@@ -65,6 +65,11 @@ public class ClienteBean implements Serializable {
 		return null;
 	}
 	
+	public void pesquisar() {
+		
+	}
+	
+	/*Get e Set*/
 	
 	public Cliente getClienteSafe() {
 		if(this.cliente == null) {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+                                "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://jsf.com.br/mytags</namespace>
+	<tag>
+		<tag-name>buscar</tag-name>
+		<source>tags/buscarClientes.xhtml</source>
+	</tag>
+</facelet-taglib>
+
