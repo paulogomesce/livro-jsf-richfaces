@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+	<h:panelGrid width="50%"
+	             cellpadding="1"
+	             cellspacing="1"
+	             border="0"
+	             columns="3"
+	             style="text-align: left;">
+	
+		<h:outputText value="Nome" />
+		<h:inputText id="nome"
+		             size="50"
+		             maxlength="100"
+		             value="#{clienteBean.cliente.nome}"/>
+		             
+		<h:commandButton type="submit" value="Pesquisar" action="#{clienteBean.pesquisar()}" style="width: 100px;" />
+	
+	</h:panelGrid>
+			
+</ui:composition>

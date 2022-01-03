@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+	<h:head>
+		<title><h:outputText value="Resultado" /></title>
+		
+		<h:outputStylesheet library="css" name="estilo.css" />
+		<h:outputScript library="js" name="controles.js" target="head"/>
+		
+	</h:head> 
+	<h:body>	
+	
+		<h:form id="form">
+
+			<p align="right">
+				<h:commandLink action="#{cadastrarUsuario.idiomaPortugues()}">
+					<h:graphicImage library="imagens" name="portugues.png" height="100px;" style="margin-left: 10px;"/>
+				</h:commandLink>
+				
+				<h:commandLink action="#{cadastrarUsuario.idiomaEnglish()}">
+					<h:graphicImage library="imagens" name="english.webp" height="100px;"/>
+				</h:commandLink>
+			</p>
+
+			<h1>
+				Resultado
+			</h1>
+		
+			<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgForm">
+			
+					<h:outputLabel value="#{msgs.nome}"/>
+					<h:outputText value="#{cadastrarUsuario.nome}" id="nome" size="50" maxlength="100"/>
+												
+					<h:outputLabel value="#{msgs.email}"/>
+					<h:outputText value="#{cadastrarUsuario.email}" id="email" size="50" maxlength="100"/>
+												
+					<h:outputLabel value="#{msgs.senha}"/>
+					<h:outputText value="#{cadastrarUsuario.senha}" id="senha" size="10" maxlength="8"/>
+												
+					<h:outputLabel value="#{msgs.confirmar}"/>
+					<h:outputText value="#{cadastrarUsuario.confirmar}" id="confirmacao" size="10" maxlength="8"/>
+					
+					<h:outputLabel value="#{msgs.endereco}"/>
+					<h:outputText value="#{cadastrarUsuario.endereco}" id="endereco" cols="45" rows="5" />						
+						
+			</h:panelGrid>
+			
+			<h:outputFormat value="#{msgs.msg_sucesso}">
+				<f:param value="#{cadastrarUsuario.nome}" />			
+			</h:outputFormat>
+			
+		</h:form>
+	
+	</h:body> 
+</html>

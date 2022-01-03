@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+	<p align="right">
+		<h:commandLink action="#{cadastrarUsuario.idiomaPortugues()}">
+			<h:graphicImage library="imagens" name="portugues.png" height="30px;" style="margin-left: 10px;"/>
+		</h:commandLink>
+		
+		<h:commandLink action="#{cadastrarUsuario.idiomaEnglish()}">
+			<h:graphicImage library="imagens" name="english.webp" height="30px;"/>
+		</h:commandLink>
+		
+		<h:commandLink action="#{loginBean.logout()}" value="Sair" />
+	</p>
+			
+</ui:composition>
