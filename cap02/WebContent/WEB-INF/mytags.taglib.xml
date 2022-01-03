@@ -3,8 +3,17 @@
                                 "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
 <facelet-taglib>
 	<namespace>http://jsf.com.br/mytags</namespace>
+	
 	<tag>
 		<tag-name>buscar</tag-name>
 		<source>tags/buscarClientes.xhtml</source>
 	</tag>
+
+	<tag>
+		<tag-name>frmLogin</tag-name>
+		<source>tags/tagLogin.xhtml</source>
+	</tag>
+	
+	
+	
 </facelet-taglib>

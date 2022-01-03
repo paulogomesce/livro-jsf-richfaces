@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 		        xmlns:rich="http://richfaces.org/rich"
 		        xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -6,10 +7,10 @@
 		        xmlns:a4j="http://richfaces.org/a4j"
 		        xmlns:h="http://java.sun.com/jsf/html">	
 	
-	<h:form id="form">s
+	<h:form id="formLogin">
 		<!-- Titulo da Tela -->
 		<h1>
-			<h:outputText value="Login" />
+			<h:outputText value="#{tituloForm == null ? 'Login' : tituloForm}" />
 		</h1>
 	
 		<!-- Conteiner do Formulário -->
@@ -21,13 +22,13 @@
 		             columnClasses="linhaTabela"
 		             id="pgForm">
 		
-				<h:outputLabel value="Login"/>
+				<h:outputLabel value="#{labelLogin == null ? 'Login' : labelLogin}"/>
 				<h:inputText value="#{loginBean.login}"
 				             id="login"
 				             size="50"
 				             maxlength="100"/>
 											
-				<h:outputLabel value="Senha"/>
+				<h:outputLabel value="#{labelSenha == null ? 'Senha' : labelSenha}"/>
 				<h:inputSecret value="#{loginBean.senha}"
 				               id="senha"
 				               size="10"
@@ -46,7 +47,7 @@
 		             style="text-align: center;">
 		             
 			<h:commandButton action="#{loginBean.logar()}"
-							 value="Logar"
+							 value="#{labelBotao}"
 							 style="width: 100px;" />
 							 				
 			<h:commandButton type="reset"
