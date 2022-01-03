@@ -1,5 +1,10 @@
 .metadata/*
 RemoteSystemsTempFiles/*
 /.metadata/
-/cap01/.classpath
 .settings/*
+
+cap01/.classpath
+cap02/.classpath
+
+cap01/.settings/*
+cap02/.settings/*
