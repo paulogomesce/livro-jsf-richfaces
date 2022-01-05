@@ -8,3 +8,10 @@ cap02/.classpath
 
 cap01/.settings/*
 cap02/.settings/*
+
+cap02/.project
+cap02/.settings/.jsdtscope
+cap02/.settings/org.eclipse.jdt.core.prefs
+cap02/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml
+cap02/.settings/org.eclipse.wst.common.project.facet.core.xml
+cap02/.settings/org.hibernate.eclipse.console.prefs
