@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="label" type="java.lang.String" required="true" />
+		<composite:attribute name="capital" type="java.lang.String" required="true" />
+		<composite:attribute name="zoom" type="java.lang.Integer" required="true" />
+	</composite:interface>
+	
+	<composite:implementation>
+		<h2><h:outputText value="#{cc:sttrs.label}"></h:outputText></h2>
+		<h2><h:outputText value="#{cc:sttrs.cpital}"></h:outputText></h2>
+		
+		
+		<iframe width="425"
+		        height="350"
+		        frameborder="0"
+		        scrolling="no"
+		        marginheight="0"
+		        marginwidth="0"
+		        src="https://www.google.com.br/maps/place/Fortaleza+-+Zone+1,+Fortaleza+-+State+of+Cear%C3%A1/@-3.7899632,-38.5889785,12z/data=!3m1!4b1!4m5!3m4!1s0x7c74f21f6c15c2f:0xfd6d6706cb7927aa!8m2!3d-3.7327177!4d-38.5269947">
+		</iframe>
+		
+	</composite:implementation>
+
+			
+</ui:composition>
