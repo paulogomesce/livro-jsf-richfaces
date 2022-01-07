@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:mycomp="http://java.sun.com/jsf/composite/mycomponentes"
+      template="/template.xhtml">
+	
+	<ui:define name="title">
+		<h:outputText value="Capitais Sudeste" />
+	</ui:define>	
+	
+	<ui:define name="tituloPagina">
+		<h:outputFormat value="Capitais Sudeste">
+			<f:param value="um(01)" />
+			<f:param value="Dois(02)" />
+		</h:outputFormat>
+	</ui:define>
+	
+	<ui:define name="conteudo">		
+	
+		<h:panelGrid width="40%" border="0" cellspacing="2" cellpadding="2" columns="2" columnClasses="linhaTabela" id="pgForm">
+		
+				<h:outputLabel value="Capitais"/>
+				<h:selectOneMenu value="#{capitaisBean.capital}" id="capital" onchange="submit()">				
+					<f:selectItem itemLabel="Belo Horizonte - Minas Gerais" itemValue="Belo Horizonte - Minas Gerais"/>
+					<f:selectItem itemLabel="Vitória - Espirito Santo" itemValue="Vitória - Espirito Santo"/>
+					<f:selectItem itemLabel="Rio de Janeiro - Rio de Janeiro" itemValue="Rio de Janeiro - Rio de Janeiro"/>
+					<f:selectItem itemLabel="São Paulo - São Paulo" itemValue="São Paulo - São Paulo"/>
+				</h:selectOneMenu>
+											
+				<h:outputLabel value="Zoom"/>
+				<h:selectOneMenu value="#{capitaisBean.zoom}" id="zoom" onchange="submit()">
+					<c:forEach var="z" begin="5" end="15" >
+						<f:selectItem itemLabel="#{z}" itemValue="#{z}"/>
+					</c:forEach>
+				</h:selectOneMenu>
+
+											
+						
+					
+		</h:panelGrid>
+		
+		<br/>
+		
+		<mycomp:mapa id="map" capital="#{capitaisBean.capital}" zoom="#{capitaisBean.zoom}" label="Capital Selecionada"/>
+		
+		
+	</ui:define>			
+</ui:composition>

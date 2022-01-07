@@ -1,8 +1,10 @@
 package br.com.jsf.presentation.managedBean;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class CapitaisBean {
 	
 	private String capital = "Vitória - Espirito Santo";
