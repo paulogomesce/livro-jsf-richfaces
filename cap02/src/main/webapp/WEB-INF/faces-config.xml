@@ -12,7 +12,7 @@
    <supported-locale>en</supported-locale>
   </locale-config>
   <resource-bundle>
-   <base-name>br.com.jsf.resource.ApplicationResources</base-name>
+   <base-name>resource.ApplicationResources</base-name>
    <var>msgs</var>
   </resource-bundle>
  </application>
