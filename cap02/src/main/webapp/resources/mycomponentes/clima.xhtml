@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="bean" type="br.com.jsf.presentation.managedBean.TempoBean" required="true" />
+		<composite:attribute name="codigoCapital" type="java.lang.String" required="true" default="84"/>
+		<composite:attribute name="capitais" type="java.lang.Object" required="true" />
+		<composite:attribute name="skin" type="java.lang.String"/>
+		<composite:attribute name="imagem" type="java.lang.String"/>
+		<composite:attribute name="actionMostrarClima" method-signature="java.lang.String mostrarClima()" />
+		<composite:actionSource name="mostrar" targets="bt_mostrar"/>		
+	</composite:interface>
+	
+	<composite:implementation>
+		<h:outputScript library="js" name="controles.js" />
+		
+		<h:panelGrid width="30%"
+			             border="0"
+			             cellspacing="2"
+			             cellpadding="2"
+			             columns="2"
+			             columnClasses="linhaTabela">
+			             
+			<h:outputText value="cc.resourceBundleMap.capital" />
+			<h:selectOneMenu value="#{cc.attrs.bean.codigoCapital}">
+				<f:selectItems value="#{cc.attrs.capitais}"/>
+			</h:selectOneMenu>
+			
+			<h:outputText value="cc.resourceBundleMap.skin" />
+			<h:selectOneMenu value="#{cc.attrs.bean.skin}">
+				<f:selectItems value="#{cc.attrs.bean.skins}"/>
+			</h:selectOneMenu>
+			
+			<h:commandLink id="bt_mostrar" action="#{cc.attrs.actionMostrarClima}">
+				<h:outputText value="Mostrar" />
+				<h:graphicImage url="#{cc.attrs.imagem}" height="15"/>
+			</h:commandLink>
+		
+		</h:panelGrid>
+		
+		<br/>
+		
+		<h:outputText value="#{cc.attrs.codigoCapital}" />
+		<br/>
+		<h:outputText value="#{cc.attrs.skin}" />
+		
+		
+		<composite:insertChildren/>
+		
+	</composite:implementation>
+
+			
+</ui:composition>

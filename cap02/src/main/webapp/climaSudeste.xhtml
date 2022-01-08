@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:mycomp="http://java.sun.com/jsf/composite/mycomponentes"
+      template="/template.xhtml">
+	
+	<ui:define name="title">
+		<h:outputText value="Clima Sudeste" />
+	</ui:define>	
+	
+	<ui:define name="tituloPagina">
+		<h:outputFormat value="Clima Sudeste">
+			<f:param value="um(01)" />
+			<f:param value="Dois(02)" />
+		</h:outputFormat>
+	</ui:define>
+	
+	<ui:define name="conteudo">		
+	
+		<mycomp:clima id="clima"
+		              bean="#{tempoBean}"
+		              capitais="#{tempoBean.listaSudeste}"
+		              codigoCapital="#{tempoBean.codigoCapital}"
+		              skin="#{tempoBean.skin}"
+		              imagem="#{resource['imagens:bt_verificar.jpg']}"
+		              actionMostrarClima="#{tempoBean.mostrarClima()}">
+		          
+			<f:actionListener for="mostrar" type="br.com.jsf.presentation.ClimaActionListener"/>
+			
+			<h:outputLink value="https://www.climatempo.com.br/" >
+				<h:outputText value="Mais Informações..." />
+			</h:outputLink>
+
+		</mycomp:clima>
+				
+	</ui:define>			
+</ui:composition>
