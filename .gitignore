@@ -15,3 +15,5 @@ cap02/.settings/org.eclipse.jdt.core.prefs
 cap02/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml
 cap02/.settings/org.eclipse.wst.common.project.facet.core.xml
 cap02/.settings/org.hibernate.eclipse.console.prefs
+
+cap02/target/*
