@@ -33,3 +33,15 @@ input, textarea{
 	background-color: #B6B6B6;
 	height: 12px;
 }
+
+.mensagem_info{
+	color: #0000FF;
+}
+
+.mensagem_erro{
+	color: #FF0000;
+}
+
+.mensagem_warn{
+	color: orange;
+}

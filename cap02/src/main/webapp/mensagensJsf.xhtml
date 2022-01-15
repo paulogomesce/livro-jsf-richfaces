@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/template.xhtml">
+	
+	<ui:define name="title">
+		<h:outputText value="Teste de Mensagens do JSF" />
+	</ui:define>	
+	
+	<ui:define name="tituloPagina">
+		<h:outputFormat value="Teste de {0} do {1}">
+			<f:param value="Mensagens" />
+			<f:param value="JSF" />
+		</h:outputFormat>
+	</ui:define>
+	
+	<ui:define name="conteudo">		
+	
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgForm">
+		
+				<h:messages showDetail="true"
+				            showSummary="true"
+				            errorClass="mensagem_erro"
+				            infoClass="mensagem_info"
+				            warnClass="mensagem_warn"/>
+					
+		</h:panelGrid>
+		
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
+			<h:commandButton actionListener="#{mensagensJsfBean.mostrarMensagens}"
+				value="Testar"
+				style="width: 100px;" />
+			
+			<h:commandButton type="reset"
+				value="Limpar"
+				style="width: 100px;"/>
+		</h:panelGrid>
+		
+	</ui:define>			
+</ui:composition>

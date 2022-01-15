@@ -38,6 +38,11 @@
 	 <context-param>
 	 	<param-name>facelets.LIBRARIES</param-name>
 	 	<param-value>/WEB-INF/mytags.taglib.xml</param-value>
+	 </context-param>
+	 
+	 <context-param>
+	 	<param-name>javax.faces.PROJECT_STAGE</param-name>
+	 	<param-value>Development</param-value>
 	 </context-param>	 
  
  
