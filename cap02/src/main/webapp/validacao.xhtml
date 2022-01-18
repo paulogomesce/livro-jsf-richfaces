@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/template.xhtml">
+	
+	<ui:define name="title">
+		<h:outputText value="Exemplos de Validadação de Formulário" />
+	</ui:define>	
+	
+	<ui:define name="tituloPagina">
+		<h:outputFormat value="Exemplos de Validadação de Formulário">
+			<f:param value="um(01)" />
+			<f:param value="Dois(02)" />
+		</h:outputFormat>
+	</ui:define>
+	
+	<ui:define name="conteudo">		
+	
+		<h:panelGrid border="0" cellspacing="0" cellpadding="0" columns="3" columnClasses="linhaTabela" id="pgForm">
+		
+				<h:outputLabel value="Nome"/>
+				<h:inputText value="#{validacaoBean.cliente.nome}" id="nome" size="50" maxlength="100" required="true">
+					<f:validateLength minimum="5" maximum="60"/>
+				</h:inputText>
+				<h:message for="nome"/>
+				
+											
+				<h:outputLabel value="Email"/>
+				<h:inputText value="#{validacaoBean.cliente.email}" id="email" size="50" maxlength="100" required="true">
+					<f:validateRegex pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"/>
+				</h:inputText>
+				<h:message for="email"/>
+											
+				<h:outputLabel value="Telefone"/>
+				<h:inputText value="#{validacaoBean.cliente.telefone}" id="telefone" >
+					<f:validateRequired/>
+				</h:inputText>
+				<h:message for="telefone"/>						
+					
+		</h:panelGrid>
+		
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
+			<h:commandButton actionListener="#{validacaoBean.testar}"
+				value="Testar"
+				style="width: 100px;" />
+			
+			<h:commandButton type="reset"
+				value="Limpar"
+				style="width: 100px;"/>
+		</h:panelGrid>
+		
+	</ui:define>			
+</ui:composition>
