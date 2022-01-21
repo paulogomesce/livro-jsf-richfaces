@@ -3,17 +3,21 @@ package br.com.jsf.presentation.modelo;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.validation.constraints.Pattern;
+
 public class Cliente implements Serializable{
 
 	private static final long serialVersionUID = 7795640734668747587L;
 	
 	
 	private int codigo;
+	@Pattern(regexp = "[A-Z]{5,60}", message = "{my.message.only.upper}")
 	private String nome;
 	private String email;
 	private String telefone;
 	private String status;
-	
+	private String endereco;
+		
 	public int getCodigo() {
 		return codigo;
 	}
@@ -43,6 +47,13 @@ public class Cliente implements Serializable{
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 	@Override
 	public int hashCode() {

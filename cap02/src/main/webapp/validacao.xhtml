@@ -38,18 +38,18 @@
 				<h:inputText value="#{validacaoBean.cliente.telefone}" id="telefone" >
 					<f:validateRequired/>
 				</h:inputText>
-				<h:message for="telefone"/>						
+				<h:message for="telefone"/>
+				
+				<h:outputLabel value="Endereço"/>
+				<h:inputText value="#{validacaoBean.cliente.endereco}" id="endereco" />
+				<h:message for="endereco"/>
 					
 		</h:panelGrid>
 		
-		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" >
 			<h:commandButton actionListener="#{validacaoBean.testar}"
 				value="Testar"
 				style="width: 100px;" />
-			
-			<h:commandButton type="reset"
-				value="Limpar"
-				style="width: 100px;"/>
 		</h:panelGrid>
 		
 	</ui:define>			
