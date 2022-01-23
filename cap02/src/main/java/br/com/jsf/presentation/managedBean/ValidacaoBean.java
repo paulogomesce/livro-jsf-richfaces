@@ -3,8 +3,12 @@ package br.com.jsf.presentation.managedBean;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 import br.com.jsf.presentation.modelo.Cliente;
 
@@ -20,6 +24,16 @@ public class ValidacaoBean implements Serializable{
 	@PostConstruct
 	public void init(){
 		this.cliente = new Cliente();
+	}
+	
+	public void validaIdade(FacesContext context, UIComponent component, Object valor) {
+		Integer idade = (Integer)valor;
+		if(idade < 18) {
+			FacesMessage mensagem = new FacesMessage();
+			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
+			mensagem.setDetail("Cadastro não permitido para menores de 18 anos.");
+			throw new ValidatorException(mensagem);
+		}		
 	}
 
 	public Cliente getCliente() {

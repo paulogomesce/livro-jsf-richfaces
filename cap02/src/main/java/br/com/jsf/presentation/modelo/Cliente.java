@@ -5,6 +5,8 @@ import java.util.Objects;
 
 import javax.validation.constraints.Pattern;
 
+import br.com.jsf.presentation.validator.Cpf;
+
 public class Cliente implements Serializable{
 
 	private static final long serialVersionUID = 7795640734668747587L;
@@ -17,6 +19,9 @@ public class Cliente implements Serializable{
 	private String telefone;
 	private String status;
 	private String endereco;
+	@Cpf(message = "CPF inválido.")
+	private String cpf;
+	private Integer idade;
 		
 	public int getCodigo() {
 		return codigo;
@@ -54,6 +59,21 @@ public class Cliente implements Serializable{
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	
+	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public Integer getIdade() {
+		return idade;
+	}
+	public void setIdade(Integer idade) {
+		this.idade = idade;
 	}
 	@Override
 	public int hashCode() {

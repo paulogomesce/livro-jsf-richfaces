@@ -43,6 +43,14 @@
 				<h:outputLabel value="Endereço"/>
 				<h:inputText value="#{validacaoBean.cliente.endereco}" id="endereco" />
 				<h:message for="endereco"/>
+				
+				<h:outputLabel value="CPF"/>
+				<h:inputText value="#{validacaoBean.cliente.cpf}" id="cpf" />
+				<h:message for="cpf"/>
+				
+				<h:outputLabel value="Idade"/>
+				<h:inputText value="#{validacaoBean.cliente.idade}" id="idade" validator="#{validacaoBean.validaIdade}"/>
+				<h:message for="idade"/>
 					
 		</h:panelGrid>
 		
