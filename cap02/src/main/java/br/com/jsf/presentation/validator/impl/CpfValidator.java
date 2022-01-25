@@ -30,7 +30,11 @@ public class CpfValidator implements ConstraintValidator<Cpf, String>{
 		return validaCPF(numCpf);
 	}
 	
-	public boolean validaCPF(String CPF) {
+	public boolean validaCPF(String pCpf) {
+		
+		String CPF = pCpf.replaceAll("[\\.\\-]", "");
+		
+		
         // considera-se erro CPF's formados por uma sequencia de numeros iguais
         if (CPF.equals("00000000000") ||
             CPF.equals("11111111111") ||

@@ -22,6 +22,7 @@ public class Cliente implements Serializable{
 	@Cpf(message = "CPF inválido.")
 	private String cpf;
 	private Integer idade;
+	private String cep;
 		
 	public int getCodigo() {
 		return codigo;
@@ -74,6 +75,12 @@ public class Cliente implements Serializable{
 	}
 	public void setIdade(Integer idade) {
 		this.idade = idade;
+	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 	@Override
 	public int hashCode() {

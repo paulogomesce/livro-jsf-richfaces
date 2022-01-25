@@ -51,6 +51,12 @@
 				<h:outputLabel value="Idade"/>
 				<h:inputText value="#{validacaoBean.cliente.idade}" id="idade" validator="#{validacaoBean.validaIdade}"/>
 				<h:message for="idade"/>
+				
+				<h:outputLabel value="CEP"/>
+				<h:inputText value="#{validacaoBean.cliente.cep}" id="cep" >
+					<f:validator validatorId="cepValidator" />
+				</h:inputText>
+				<h:message for="cep"/>				
 					
 		</h:panelGrid>
 		
