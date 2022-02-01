@@ -23,7 +23,14 @@ public class Cliente implements Serializable{
 	private String cpf;
 	private Integer idade;
 	private String cep;
+	private String senha;
 		
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public int getCodigo() {
 		return codigo;
 	}

@@ -17,7 +17,9 @@
 		</h:outputFormat>
 	</ui:define>
 	
-	<ui:define name="conteudo">		
+	<ui:define name="conteudo">
+	
+		<f:event listener="#{validacaoBean.validaSenha}" type="postValidate"/>
 	
 		<h:panelGrid border="0" cellspacing="0" cellpadding="0" columns="3" columnClasses="linhaTabela" id="pgForm">
 		
@@ -56,9 +58,24 @@
 				<h:inputText value="#{validacaoBean.cliente.cep}" id="cep" >
 					<f:validator validatorId="cepValidator" />
 				</h:inputText>
-				<h:message for="cep"/>				
+				<h:message for="cep"/>
+				
+				<h:outputLabel value="Senha"/>
+				<h:inputText value="#{validacaoBean.cliente.senha}" id="senha">
+					<f:validateRequired/>
+				</h:inputText>
+				<h:message for="senha"/>
+								
+				<h:outputLabel value="Confirmação Senha"/>
+				<h:inputText value="#{validacaoBean.confirmacaoSenha}" id="confirmacaoSenha">
+					<f:validateRequired/>
+				</h:inputText>
+				<h:message for="confirmacaoSenha"/>
+
 					
 		</h:panelGrid>
+		
+		<h:messages showDetail="true" showSummary="true"/>
 		
 		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" >
 			<h:commandButton actionListener="#{validacaoBean.testar}"
