@@ -15,11 +15,127 @@
 	
 	<ui:define name="conteudo">		
 	
+		<h3>Panel</h3>
+		
 		<rich:panel header="RichFaces 4" >
+			<f:facet name="header">
+				<h:panelGrid columns="2">
+					<h:column>RichFaces 4</h:column>
+					<h:column>
+						<div align="right">
+							Skin:
+							<h:selectOneMenu id="status"
+								value="#{skinBean.nomeSkin}"
+								valueChangeListener="#{skinBean.alteraSkin}"
+								onchange="submit()">
+								<f:selectItems value="#{skinBean.opcoesSkins}"
+									var="skin"
+									itemValue="#{skin}"
+									itemLabel="#{skin}"/>
+							
+							</h:selectOneMenu>						
+						</div>
+					</h:column>
+				</h:panelGrid>
+			
+			</f:facet>
 		
 			<p>Seja bem vindo ao RichFaces 4</p>
+			
+			Data Atual:
+			<h:outputText id="data" value="#{skinBean.dataAtual}">
+				<f:convertDateTime timeZone="GMT-3"
+					pattern="dd/MM/yyyy HH:mm:ss"/>			
+			</h:outputText>
+			
+			<h:panelGrid columns="2">
+				<a4j:commandButton value="Submeter"
+					action="#{skinBean.processar}"
+					execute="@this"
+					render="data"/>
+				
+				<a4j:commandLink value="Submeter"
+					action="#{skinBean.processar}"
+					execute="@this"
+					render="data"/>	
+					
+			</h:panelGrid>			
 		
 		</rich:panel>
+		
+		<h3>Collapsible Panel</h3>
+		
+		<rich:collapsiblePanel header="Mensagens não lidas" expanded="false">
+				<p>Novas mensagens chegaram na sua caixa de entrada.</p>			
+		</rich:collapsiblePanel>
+		
+		<h3>Accordion</h3>
+		
+		<rich:accordion>
+			<rich:accordionItem header="Item 01">
+				<p>Item 01</p>
+			</rich:accordionItem>
+			
+			<rich:accordionItem header="Item 02">
+				<p>Item 02</p>
+			</rich:accordionItem>
+			
+			<rich:accordionItem header="Item 03">
+				<p>Item 03</p>
+			</rich:accordionItem>
+		
+		</rich:accordion>
+		
+		<h3>Tab Panel</h3>
+		
+		<rich:tabPanel>
+			<rich:tab header="Tab 01">
+				<p>Texto 01</p>
+				<p>Paulo</p>
+			</rich:tab>
+			
+			<rich:tab header="Tab 02">
+				<p>Texto 02</p>
+				<p>Adejany</p>
+			</rich:tab>
+
+			<rich:tab header="Tab 03">
+				<p>Texto 03</p>
+				<p>Felipe</p>
+			</rich:tab>
+			
+		</rich:tabPanel>
+		
+		<h3>Popup Panel</h3>
+		
+		<rich:popupPanel id="popup" show="false">
+			<f:facet name="header">
+				Título da Janela
+			</f:facet>			
+			
+			<f:facet name="controls">
+				<h:outputLink onclick="#{rich:component('popup')}.hide(); return false;">Fechar</h:outputLink>
+			</f:facet>
+			
+			<p>Adicionar o conteúdo do popup neste local.</p>
+			
+		</rich:popupPanel>
+		
+		<h:commandButton value="Exibir">
+			<rich:componentControl target="popup" operation="show"/>
+		</h:commandButton>
+		
+		<h:commandLink onclick="#{rich:component('popup')}.show(); return false;">Exibir 02</h:commandLink>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	</ui:define>			
 </ui:composition>
