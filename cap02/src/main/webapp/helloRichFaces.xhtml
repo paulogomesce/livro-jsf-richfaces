@@ -127,15 +127,32 @@
 		
 		<h:commandLink onclick="#{rich:component('popup')}.show(); return false;">Exibir 02</h:commandLink>
 		
+		<h3>Tooltip</h3>
 		
+		<h:commandButton value="Teste Tooltip" id="teste_tooltip"/>
+		<rich:tooltip target="teste_tooltip" mode="client">
+			<f:facet name="loading">
+				Carregando...
+			</f:facet>
+			<h4>Teste</h4>
+			<p>Esse é o <b>texto</b> que aparece no componente.</p>
+		</rich:tooltip>		
 		
+		<h3>Status</h3>
+		<h:commandButton value="Testar ajax Status" >
+			<a4j:ajax listener="#{skinBean.testaStatus}" execute="@this"/>
+		</h:commandButton>
+		<a4j:status onstart="#{rich:component('ajaxStatus')}.show();"
+			onstop="#{rich:component('ajaxStatus')}.hide();"/>
+		<rich:popupPanel id="ajaxStatus" modal="true">
+			<h:graphicImage library="imagens" name="ajaxload.gif" />		
+		</rich:popupPanel>
 		
+		<h3>Calendar</h3>
 		
-		
-		
-		
-		
-		
+		<rich:calendar datePattern="dd/MM/yyyy"/><br/>
+		<rich:calendar datePattern="dd/MM/yyyy" popup="false"/><br/>
+		<rich:calendar datePattern="dd/MM/yyyy HH:mm:ss"/><br/>
 		
 	</ui:define>			
 </ui:composition>

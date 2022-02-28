@@ -16,10 +16,18 @@ public class SkinBean {
 	
 	public void processar() {
 		this.dataAtual = new Date();
-	}	
+	}
 	
 	public void alteraSkin(ValueChangeEvent event) {
 		this.nomeSkin = (String)event.getNewValue();
+	}
+	
+	public void testaStatus() {
+		try {
+			Thread.sleep(60000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getNomeSkin() {
