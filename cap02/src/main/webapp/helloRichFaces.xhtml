@@ -154,5 +154,76 @@
 		<rich:calendar datePattern="dd/MM/yyyy" popup="false"/><br/>
 		<rich:calendar datePattern="dd/MM/yyyy HH:mm:ss"/><br/>
 		
+		<h3>Autocomplete</h3>
+		
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Tipo lazyCliente:" />
+			<rich:autocomplete value="#{autoCompleteBean.alimento}"
+				autocompleteList="#{autoCompleteBean.listaAlimentos}"
+				mode="lazyClient"
+				minChars="3"
+				showButton="true"/>
+				
+			<h:outputLabel value="Tipo cachedAjax:" />
+			<rich:autocomplete value="#{autoCompleteBean.alimento}"
+				autocompleteMethod="#{autoCompleteBean.montaListaSugestoes}"
+				mode="lazyClient"
+				minChars="3"
+				showButton="false"/>
+				
+			<h:outputLabel value="Com Coluna" />
+			<rich:autocomplete value="#{autoCompleteBean.alimento}"
+				autocompleteMethod="#{autoCompleteBean.montarListaSugestoesProdutos}"
+				mode="ajax"
+				layout="table"
+				var="produto"
+				fetchValue="#{produto.nome}"
+				selectFirst="true"
+				autofill="true"
+				minChars="1"
+				showButton="true">
+				
+				<rich:column>
+					<h:graphicImage library="imagens" name="#{produto.imagem}" width="50"/>
+				</rich:column>
+					
+				<rich:column width="150px">
+					<h:outputText value="#{produto.nome}" />
+				</rich:column>
+				
+				<rich:column width="150px">
+					<h:outputText value="#{produto.tipo}" />
+				</rich:column>
+				
+			</rich:autocomplete>
+			
+				
+		</h:panelGrid>
+		
+		
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
 	</ui:define>			
 </ui:composition>
