@@ -195,11 +195,57 @@
 					<h:outputText value="#{produto.tipo}" />
 				</rich:column>
 				
-			</rich:autocomplete>
-			
+			</rich:autocomplete>			
 				
 		</h:panelGrid>
 		
+
+		<h3>Toolbar</h3>
+				
+		<rich:toolbar itemSeparator="line" id="tb" height="30px">
+			<rich:toolbarGroup id="tg1">
+				<a4j:commandLink value="Gravar"/>
+				<a4j:commandLink value="Abrir"/>
+			</rich:toolbarGroup>
+			
+			<rich:toolbarGroup>
+				<a4j:commandLink value="Gráfico"/>
+				<a4j:commandLink value="Relatório"/>
+			</rich:toolbarGroup>
+			
+			<rich:toolbarGroup id="tg3">
+				<h:inputText/>
+			</rich:toolbarGroup>
+			
+		</rich:toolbar>
+		
+		<br/>
+		
+		<rich:toolbar binding="#{toolbarBean.menuBar}" />
+		
+		<h3>DropDown</h3>
+		
+		<rich:toolbar>
+			<rich:dropDownMenu>
+				<f:facet name="label">
+					<h:outputText value="Empresa" />
+				</f:facet>
+				<rich:menuItem label="Cadastrar" />
+				<rich:menuItem label="Consultar" />
+			</rich:dropDownMenu>
+			
+			<rich:dropDownMenu>
+				<f:facet name="label">
+					<h:outputText value="Cliente" />
+				</f:facet>
+				<rich:menuGroup label="Cadastrar">
+					<rich:menuItem label="Pessoa Jurídica" />
+					<rich:menuItem label="Pessoa Física" />
+				</rich:menuGroup>
+				
+			</rich:dropDownMenu>
+			
+		</rich:toolbar>
 		
 		
 		<br />
