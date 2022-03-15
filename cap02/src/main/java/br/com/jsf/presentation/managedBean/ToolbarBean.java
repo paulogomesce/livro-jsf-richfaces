@@ -20,6 +20,9 @@ public class ToolbarBean implements Serializable{
 
 	
 
+	public void setMenuBar(UIToolbar menuBar) {
+		this.menuBar = menuBar;
+	}
 	private static final long serialVersionUID = 1L;
 
 	private UIToolbar menuBar;
@@ -146,6 +149,8 @@ public class ToolbarBean implements Serializable{
 	public void setTextoPesquisa(String textoPesquisa) {
 		this.textoPesquisa = textoPesquisa;
 	}
+	
+	
 	
 	
 }

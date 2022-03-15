@@ -203,7 +203,7 @@
 		<h3>Toolbar</h3>
 				
 		<rich:toolbar itemSeparator="line" id="tb" height="30px">
-			<rich:toolbarGroup id="tg1">
+			<rich:toolbarGroup>
 				<a4j:commandLink value="Gravar"/>
 				<a4j:commandLink value="Abrir"/>
 			</rich:toolbarGroup>
@@ -213,7 +213,7 @@
 				<a4j:commandLink value="Relatório"/>
 			</rich:toolbarGroup>
 			
-			<rich:toolbarGroup id="tg3">
+			<rich:toolbarGroup>
 				<h:inputText/>
 			</rich:toolbarGroup>
 			
@@ -246,6 +246,19 @@
 			</rich:dropDownMenu>
 			
 		</rich:toolbar>
+		
+		<h3>FileUupload</h3>
+		
+		<rich:fileUpload id="fileUp"
+			acceptedTypes="gif,jpg,png"
+			ontyperejected="alert('arquivos permitidos: gif, jpg, png')"
+			maxFilesQuantity="1"
+			noDuplicate="true"
+			fileUploadListener="#{fileUploadBean.uploadArquivo}">
+			
+			<a4j:ajax event="uploadcomplete" render="@form" />
+		
+		</rich:fileUpload>
 		
 		
 		<br />
