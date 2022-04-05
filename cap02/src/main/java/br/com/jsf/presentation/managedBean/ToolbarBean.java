@@ -1,14 +1,11 @@
 package br.com.jsf.presentation.managedBean;
 
-import java.awt.MenuBar;
 import java.io.Serializable;
 
 import javax.el.MethodExpression;
-import javax.el.ValueExpression;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.html.HtmlGraphicImage;
-import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
 
 import org.richfaces.component.UICommandLink;
@@ -124,12 +121,13 @@ public class ToolbarBean implements Serializable{
 		return graphicImage;
 	}
 	
-	private HtmlInputText newHtmlInputText(FacesContext ctx, String id) {
-		HtmlInputText inputText = (HtmlInputText)ctx.getApplication()
-				.createComponent(ctx, UICommandLink.COMPONENT_TYPE, "org.richfaces.component.HtmlInputText");
-		inputText.setId(id);
-		return inputText;	
-	}
+	/*
+	 * private HtmlInputText newHtmlInputText(FacesContext ctx, String id) {
+	 * HtmlInputText inputText = (HtmlInputText)ctx.getApplication()
+	 * .createComponent(ctx, UICommandLink.COMPONENT_TYPE,
+	 * "org.richfaces.component.HtmlInputText"); inputText.setId(id); return
+	 * inputText; }
+	 */
 	
 	
 	private MethodExpression newMethodExpression(FacesContext ctx, String action) {
@@ -138,10 +136,12 @@ public class ToolbarBean implements Serializable{
 		return me;
 	}
 	
-	private ValueExpression newValueExpression(FacesContext ctx, String valueExpression, Class<?> valueType) {
-		return ctx.getApplication().getExpressionFactory()
-				.createValueExpression(ctx.getELContext(), valueExpression, valueType);
-	}
+	/*
+	 * private ValueExpression newValueExpression(FacesContext ctx, String
+	 * valueExpression, Class<?> valueType) { return
+	 * ctx.getApplication().getExpressionFactory()
+	 * .createValueExpression(ctx.getELContext(), valueExpression, valueType); }
+	 */
 	
 	public String getTextoPesquisa() {
 		return textoPesquisa;

@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/template.xhtml">
+	
+	<ui:define name="title">
+		<h:outputText value="Testes do Spring" />
+	</ui:define>	
+	
+	<ui:define name="tituloPagina">
+		<h:outputFormat value="Testes do Spring">
+			<f:param value="um(01)" />
+			<f:param value="Dois(02)" />
+		</h:outputFormat>
+	</ui:define>
+	
+	<ui:define name="conteudo">		
+	
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgForm">
+		
+				<h:outputLabel value="Nome"/>
+				<h:inputText value="#{springBean.nome}" id="nome" size="50" maxlength="100"/>						
+					
+		</h:panelGrid>
+		
+		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
+			<h:commandButton actionListener="#{springBean.testar}"
+				value="Testar"
+				style="width: 100px;" />
+			
+			<h:commandButton type="reset"
+				value="Limpar"
+				style="width: 100px;"/>
+		</h:panelGrid>
+		
+	</ui:define>			
+</ui:composition>
