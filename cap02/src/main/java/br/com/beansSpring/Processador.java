@@ -1,6 +1,8 @@
 package br.com.beansSpring;
 
-public class Processador {
+import org.springframework.beans.factory.DisposableBean;
+
+public class Processador /* implements InitializingBean */ implements DisposableBean{
 	
 	private FonteDadosArquivo fonteDados;
 	private ImpressorImpl impressor;
@@ -18,6 +20,19 @@ public class Processador {
 		this.impressor = impressor;
 	}
 	
+	/*
+	 * @Override public void afterPropertiesSet() throws Exception {
+	 * System.out.println("Método executado na inicialização do bean. Implementado a interface InitializingBean."); }
+	 */
+	
+	public void metodoDeInicializacao() {
+		System.out.println("Método executado na inicialização do bean configurado no xml.");
+	}
+	
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Método executado após a destruição do objeto. Implementado a classe DisposableBean");	
+	}
 	
 
 }

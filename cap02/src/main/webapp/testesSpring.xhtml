@@ -26,10 +26,14 @@
 					
 		</h:panelGrid>
 		
-		<h:panelGrid width="40%" border="0" cellspacing="0" cellpadding="0" columns="2" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
+		<h:panelGrid width="100%" border="0" cellspacing="0" cellpadding="0" columns="1" columnClasses="linhaTabela" id="pgBotoes" style="text-align: center;">
 			<h:commandButton actionListener="#{springBean.testar}"
 				value="Testar"
 				style="width: 100px;" />
+				
+			<h:commandButton actionListener="#{springBean.testarConfiguration}"
+				value="Testar @Configuration"
+				style="width: 100px;" />	
 			
 			<h:commandButton type="reset"
 				value="Limpar"
