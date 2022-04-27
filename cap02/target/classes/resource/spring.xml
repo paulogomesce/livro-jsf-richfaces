@@ -22,6 +22,26 @@
   	<bean id="processador" class="br.com.beansSpring.Processador" init-method="metodoDeInicializacao" scope="request">
   		<property name="impressor" ref="impressor"/>
   		<property name="fonteDados" ref="fonteDados"/>
-  	</bean>  
+  	</bean>
+  	
+  	<!-- Configurações AOP -->
+  	
+  	<bean id="daoPessoaTarget" class="br.com.springDao.DAOPessoas" />
+  	
+  	<!-- Advice do tipo around -->
+  	<bean id="aroundProfilador" class="br.com.springAdvices.AdviceAroundProfilador"/>
+  	
+  	<!-- Advice do tipo before -->
+  	<bean id="beforeProfilador" class="br.com.springAdvices.AdviceBeforeProfilador" />
+  	
+  	<bean id="daoPessoas" class="org.springframework.aop.framework.ProxyFactoryBean">
+  		<property name="target" ref="daoPessoaTarget" />
+  		<property name="interceptorNames">
+  			<list>
+  				<value>aroundProfilador</value>
+  				<value>beforeProfilador</value>
+  			</list>
+  		</property>
+  	</bean>
 
 </beans>

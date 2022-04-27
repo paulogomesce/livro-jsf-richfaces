@@ -33,11 +33,16 @@
 				
 			<h:commandButton actionListener="#{springBean.testarConfiguration}"
 				value="Testar @Configuration"
-				style="width: 100px;" />	
+				style="width: 100px;" />
+
+			<h:commandButton actionListener="#{springBean.testarConfigAOP}"
+				value="Testar AOP"
+				style="width: 100px;" />
 			
 			<h:commandButton type="reset"
 				value="Limpar"
 				style="width: 100px;"/>
+				
 		</h:panelGrid>
 		
 	</ui:define>			
